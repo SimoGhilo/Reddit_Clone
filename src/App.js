@@ -16,28 +16,7 @@ import { PublicFreakout } from './features/components/subreddits/categories/publ
 import { LeagueOfLedgends } from './features/components/subreddits/categories/leagueoflegends';
 
 
-const url = "https://api.reddit.com/r/popular.json";
 function App() {
-  const [data, setData] = useState([]);
-  async function getData() {
-    await fetch(url)
-      .then(res => res.json())
-      .then(result => console.log(result));
-  }
-
-
-  //useEffect(data, [data])
-  useEffect(() => {
-    fetch(url)
-      .then(res => res.json())
-      .then(result => setData(result))
-
-  }, [data])
-
-  console.log();
-
-
-
 
   return (
     <div id='container'>

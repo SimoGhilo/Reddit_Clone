@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const WorldNews = () => {
 
-    const [data, setData] = useState({});
+    /*const [data, setData] = useState([]);
 
     const url = "https://api.reddit.com/r/worldnews.json";
     useEffect(() => {
@@ -11,17 +11,17 @@ const WorldNews = () => {
             .then(res => res.json())
             .then(result => setData(result))
 
-    }, [data])
+    }, [data]) */
 
 
-    return (
-        <>
-            {data.map(post => (
-                <div key={post.id}>
-                    <h5>{post.title}</h5>
-                </div>
-            ))}
-        </>
-    )
+    /*  return (
+          <>
+              {data.map(post => (
+                  <div key={post.id}>
+                      <h5>{post.title}</h5>
+                  </div>
+              ))}
+          </>
+      ) */
 }
 export default WorldNews;
