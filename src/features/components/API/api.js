@@ -1,9 +1,9 @@
-export const APIRoot = 'https://www.reddit.com';
+export const APIRoot = 'https://api.reddit.com/r';
 
 //Fetch all posts for a specific subreddit 
 
 export const getSubRedditPosts = async (subreddit) => {
-    const response = await fetch(`${APIRoot}.${subreddit}.json`);
+    const response = await fetch(`${APIRoot}/${subreddit}.json`);
     const json = await response.json();
 
     return json.data.children.map((post) => post.data)
@@ -12,7 +12,7 @@ export const getSubRedditPosts = async (subreddit) => {
 ///Fetch all subreddits 
 
 export const getSubreddits = async () => {
-    const response = await fetch(`${APIRoot}./subreddits.json`);
+    const response = await fetch(`${APIRoot}/subreddits.json`);
     const json = await response.json();
 
     return json.data.children.map((subreddit) => subreddit.data);
@@ -20,3 +20,4 @@ export const getSubreddits = async () => {
 
 ///Fetch the comments for a subreddit
 
+///???

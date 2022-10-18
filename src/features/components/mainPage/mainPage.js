@@ -7,7 +7,7 @@ import "./mainPage.css";
 export function MainPage() {
 
 
-
+    ///DO I dispatch the getSubReddits from here ?
 
 
 
