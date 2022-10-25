@@ -1,4 +1,4 @@
-export const APIRoot = 'https://api.reddit.com/r';
+export const APIRoot = 'https://www.reddit.com/r';
 
 //Fetch all posts for a specific subreddit 
 

@@ -2,39 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import "./searchBar.css";
+import { selectSearchTerm } from './searchBarSlice';
 
 
 
 export function SearchBar() {
-    const [search, setSearch] = useState('')
 
-    /// Do I need to create another slice for the search bar ?
+    const dispatch = useDispatch();
+    const searchTerm = useSelector(selectSearchTerm);
 
+    console.log(searchTerm);
 
+    useEffect(() => { dispatch(searchTerm); }, [dispatch]);
 
     const handleSearch = (e) => {
-        setSearch(e.target.value);
-    }
-
-    useEffect(() => {
-        setSearch(search);
-    }, [search])
-
-    const submitSearch = (e) => {
         e.preventDefault();
-        //dispatch
+        e.target.value
     }
 
-    //Got stuck on how to submit the search
 
     return (
         <div className="form-outline">
             <div className="img-container">
-                <img src='./reddit.png' id='icon' />
+                <img src='./reddit_new.png' id='icon' />
             </div>
-            <label className="form-label" htmlFor="form1">Search in Reddit:</label>
+            <label className="form-label" htmlFor="form1">Search in Reddit: </label>
             <input type="search" id="form1" className="form-control" onChange={handleSearch} />
-            <button className="btn btn-primary" onSubmit={submitSearch}>Search</button>
+            <button className="btn btn-primary">Search</button>
         </div>
     )
 }

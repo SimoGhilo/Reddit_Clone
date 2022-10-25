@@ -1,0 +1,41 @@
+html{
+    font-size: 2rem;
+    font-family: 'Viga', sans-serif;
+}
+
+.posts{
+    text-align: center;
+    font-family: 'Viga', sans-serif;
+    color: black;
+    text-shadow: 1px 1px gray;
+    background-color: beige;
+}
+
+.container{
+    border: 1px solid yellow; 
+    margin-top: 0.5rem;
+}
+
+.container #thumbnails {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 11rem;
+    border-radius: 1rem;
+    border: 00.05rem gray solid;
+}
+
+
+/* Mobile */
+@media only screen and (max-width:480px) {
+    .posts{
+        display: none;
+    }
+}
+
+
+/* tablet */
+@media only screen and (min-width:480px) and (max-width:1024px) {
+
+}

@@ -1,14 +1,16 @@
 html{
     font-size: 1rem;
+    font-family: 'Viga', sans-serif;
 }
 
 .form-outline {
     display: flex;
     flex-direction: row;
-    width: fit-content;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    margin-left: 11rem;
+    background-color: beige;
+    font-family: 'Viga', sans-serif;
 }
 
 #form1 {
@@ -21,10 +23,14 @@ html{
 
 .img-container {
     margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-right: 2rem;
     width: 2rem;
     
+}
+
+.img-container img {
+    margin-top: 1rem;
 }
 
 #icon {

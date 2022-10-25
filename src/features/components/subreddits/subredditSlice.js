@@ -11,7 +11,7 @@ const initialState = {
 
 export const fetchSubreddits = createAsyncThunk('subreddits/getSubreddits',
     async () => {
-        const response = await fetch(`https://api.reddit.com/r/subreddits.json`);
+        const response = await fetch(`https://www.reddit.com/subreddits.json`);
         const json = await response.json();
         console.log(json);
 
@@ -52,23 +52,11 @@ const subRedditSlice = createSlice({
     }
 });
 
-///action exports
 
-//////////////DO I NEED TO EXPORT THE EXTRA REDUCERS AS WELL ?
-
-/* export const {
-    startGetSubreddits,
-    getSubredditsSuccess,
-    getSubredditsError
-} = subRedditSlice.actions;
-
-*/
-
-///reducers exports
 
 export default subRedditSlice.reducer;
 
-///selector exports
+
 
 export const selectSubReddits = (state) => state.subreddit.subreddits
 

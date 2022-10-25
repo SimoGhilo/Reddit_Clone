@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-export const Card = (props) => {
+export const Card = ({ post }) => {
 
-
+    const { subreddit } = post;
 
     return (
         <div>
-            <h3>Card</h3>
+            <h3>{subreddit}</h3>
             <img />
             <p></p>
             <p></p>

@@ -11,7 +11,7 @@ export const Categories = () => {
     return (
         <div>
             <ul>
-                {categories.map((category) => <li>{category}</li>)}
+                {categories.map((category, index) => <li key={index}>{category}</li>)}
             </ul>
         </div>
     )
