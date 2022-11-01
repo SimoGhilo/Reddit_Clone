@@ -11,14 +11,11 @@ import './App.css';
 function App() {
 
   return (
-    <div id='container'>
-      <div id="top">
-        <SearchBar />
-      </div>
-      <div id="sidebar">
+    <div className='main-content'>
+      <div className="sidebar">
         <Subreddit />
       </div>
-      <div id="main">
+      <div className="post-container">
         <Posts />
       </div>
     </div>

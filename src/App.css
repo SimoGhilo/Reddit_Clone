@@ -1,20 +1,26 @@
-#container {
-  width: fit-content;
+.main-content{
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-
-.App {
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: space-between;
   justify-content: space-between;
-  width: fit-content;
+  align-items: flex-start;
 }
+.sidebar{
+  width: 25%;
+  padding: 20px 10px;
+
+}
+.post-container{
+  width: 72%;
+  padding: 20px 10px;
+
+}
+/*#container {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+
 
 #top{
   margin-bottom: 1rem;
@@ -52,13 +58,12 @@
 
 #main img{
   width: 10rem;
-}
+} */
 
 /* Mobile */
 @media only screen and (max-width:480px) {
 
 
-  
 }
 
 

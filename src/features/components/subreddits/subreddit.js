@@ -17,18 +17,23 @@ export function Subreddit() {
     useEffect(() => { dispatch(fetchSubreddits()) }, [dispatch])
 
 
-    console.log(subreddits);
+    // console.log(subreddits);
     return (
         <div className="container">
-            <h3>Subreddits</h3>
+            <h3 id="sub">Subreddits</h3>
             <nav className='subreddit-links'>
                 {subreddits.map(subreddit => {
-                    console.log(subreddit);
+                    // console.log(subreddit);
                     return <NavLink id='link' to={`/${subreddit.display_name}`} key={subreddit.id}>
-                        {subreddit.icon_img ?
-                            <img className='subreddit-icon' src={subreddit.icon_img} alt='icon of the subreddit' /> :
-                            <div className='subreddit-icon'></div>}
-                        <span id='name' data-testid='subreddit-name'>{subreddit.display_name}</span>
+                        <div className='subreddit-icon'>
+
+                            {/* <img id='icon' src={subreddit.icon_img} /> */}
+                            <div id='name'>
+                                {subreddit.display_name}
+                            </div>
+
+
+                        </div>
                     </NavLink>
                 })}
             </nav>

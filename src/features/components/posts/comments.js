@@ -4,28 +4,30 @@ import { useEffect } from 'react';
 import { fetchComments, selectComments } from "./postSlice";
 
 
-export const Comments = () => {
+export const Comments = (props) => {
 
 
     const dispatch = useDispatch();
     const comments = useSelector(selectComments);
+    let post = props.post;
+    console.log(post.id)  //Stuck here
+    console.log(comments); //Stuck here
 
-    console.log(comments);
 
     //Calculate the date now in seconds 
 
     var seconds = new Date().getTime() / 1000;
 
-    useEffect(() => { dispatch(fetchComments()), [dispatch] }) ///Error here
-
+    useEffect(() => { dispatch(fetchComments(post.permalink)) }, [dispatch, post.permalink])
+    // console.log(comments);
     return (
         <>
             {comments.map((comment) => {
                 return (
                     <div className="comments">
                         <p>{comment.author}</p>
-                        <p>{(seconds - comment.created_utc) / 60} Hours ago</p>
-                        <img src="./chat.png" alt="chat"></img>
+                        <p>{(seconds - post.created_utc) / 60} Hours ago</p>
+                        <p><small>{comment.body}</small></p>
                     </div>
                 )
             })}

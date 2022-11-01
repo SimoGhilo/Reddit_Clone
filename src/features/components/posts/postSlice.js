@@ -22,11 +22,11 @@ export const fetchPosts = createAsyncThunk('posts/getPosts',
 //// Another thunk for fetching the comments 'https://www.reddit.com/r/comments/{postID}.json
 
 export const fetchComments = createAsyncThunk('posts/getComments',
-    async (postId) => {
-        const response = await fetch(`https://www.reddit.com/r/comments/${postId}.json`)
+    async (permalink) => {
+        const response = await fetch(`https://www.reddit.com/${permalink}.json`)
         const json = await response.json();
-
-        return json.data.children.map((comment) => comment.data);
+        console.log(json);
+        return json[1].data.children.map((comment) => comment.data);
     });
 
 const postsSlice = createSlice({
