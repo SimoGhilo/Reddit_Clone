@@ -9,15 +9,14 @@ import "./posts.css";
 import { fetchSearchTerm, selectSearchTerm } from '../searchBar/searchBarSlice';
 
 
-export const Posts = () => {
+export const Posts = ({ posts }) => {
     const dispatch = useDispatch();
-    const posts = useSelector(selectPosts);
     const [search, setSearch] = useState('');
     const searchTerm = useSelector(selectSearchTerm);
     const [showComment, setShowComment] = useState(false);
     console.log(posts)
 
-    useEffect(() => { dispatch(fetchPosts()) }, [dispatch])
+
 
 
     // console.log(searchTerm);
@@ -50,7 +49,7 @@ export const Posts = () => {
                             <div className="container">
                                 <h4>{term.title}</h4>
                                 <img className='thumbnails' src={term.thumbnail}></img>
-                                <h6 onClick={() => setShowComment(!showComment)}>Comment</h6>
+                                <h6 onClick={() => setShowComment(!showComment)}>Comments</h6>
                             </div>
                             {showComment && <div className="box-comment">
                                 <Comments />
@@ -68,7 +67,7 @@ export const Posts = () => {
                                 <img className='thumbnails' src={post.thumbnail}></img>
                                 {/* <img id='comments' src="./chat.png" alt="comments" /> */}
                             </div>
-                            <h6 onClick={() => setShowComment(!showComment)}>Comment</h6>
+                            <h6 onClick={() => setShowComment(!showComment)}>Comments</h6>
                             {
                                 showComment && <div className="box-comment">
                                     <Comments post={post} />

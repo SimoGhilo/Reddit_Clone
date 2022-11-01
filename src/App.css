@@ -61,8 +61,23 @@
 } */
 
 /* Mobile */
-@media only screen and (max-width:480px) {
-
+@media screen and (max-width:576px) {
+  .main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .sidebar{
+    width: 90%;
+    padding: 20px 10px;
+  
+  }
+  .post-container{
+    width: 90%;
+    padding: 20px 10px;
+  
+  }
 
 }
 

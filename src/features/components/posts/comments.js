@@ -22,7 +22,7 @@ export const Comments = (props) => {
     // console.log(comments);
     return (
         <>
-            {comments.map((comment) => {
+            {comments?.slice(0, 3).map((comment) => {
                 return (
                     <div className="comments">
                         <p>{comment.author}</p>
