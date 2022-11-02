@@ -1,0 +1,20 @@
+.comments{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+.comments .body {
+    
+    box-shadow: -10px -6px 10px black;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.comments p {
+    font-size: medium;
+    margin-bottom: 15px;
+}

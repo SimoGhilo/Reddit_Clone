@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { SearchBar } from './features/components/searchBar/searchBar';
 import { MainPage } from './features/components/mainPage/mainPage';
 import { Subreddit } from './features/components/subreddits/subreddit';
 import { Route, Routes } from 'react-router-dom';
@@ -30,6 +29,9 @@ import Antiwork from './features/components/Pages/Antiwork';
 import LivestreamFail from './features/components/Pages/LivestreamFail';
 import Technology from './features/components/Pages/Technology';
 import Gaming from './features/components/Pages/Gaming';
+import Videos from './features/components/Pages/Videos';
+import Movies from './features/components/Pages/Movies';
+
 
 
 function App() {
@@ -66,6 +68,8 @@ function App() {
           <Route path="/LivestreamFail" element={<LivestreamFail></LivestreamFail>}></Route>
           <Route path="/technology" element={<Technology></Technology>}></Route>
           <Route path="/gaming" element={<Gaming></Gaming>}></Route>
+          <Route path="/videos" element={<Videos></Videos>}></Route>
+          <Route path="/movies" element={<Movies></Movies>}></Route>
         </Routes>
       </div>
     </div>

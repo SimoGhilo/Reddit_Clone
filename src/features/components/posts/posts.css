@@ -1,71 +1,23 @@
 .posts{
     border: 1px solid black;
+    margin-bottom: 10px;
+    box-shadow: -10px -6px 2px black;
+    
 }
 
-
-/* html{
-    font-size: 2rem;
-    font-family: 'Viga', sans-serif;
+.searchBar{
+    margin-bottom: 45px;
 }
 
-.posts{
-    text-align: center;
-    font-family: 'Viga', sans-serif;
-    color: black;
-    text-shadow: 1px 1px gray;
-    background-color: beige;
+h6:hover{
+    color: brown;
 }
 
-.container{
-    border: 1px solid yellow; 
-    margin-top: 0.5rem;
+h6:active{
+    text-shadow: 2px 2px 2px black;
 }
 
-.container h3{
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.container #thumbnails {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    width: 7rem;
-    height: 7rem;
-    margin-left: 11rem;
-    border-radius: 1rem;
-    border: 00.05rem darkgray solid;
-    box-shadow: 1px 1px 0px gray;
-    object-fit: contain;
-}
-
-.container #comments {
-    box-shadow: 1px 1px 0px;
-    object-fit: contain;
-    box-shadow: 3px 3px 0px gray;
-    margin-left: 11.67rem;
-    margin-bottom: 1.5rem;
-    width: 5.4rem;
-}
-
-.container #comments:active {
-    box-shadow: 1px 1px 0px;
-    object-fit: contain;
-    margin-left: 11.74rem;
-    margin-bottom: 1.48rem;
-    width: 5.4rem;
-}
- */
-
-
-/* Mobile
-@media only screen and (max-width:480px) {
-    .posts{
-        display: none;
-    }
-} */
-
-
-/* tablet */
-@media only screen and (min-width:480px) and (max-width:1024px) {
-
+.thumbnails{
+    width: 35%;
+    border-radius: 10px;
 }

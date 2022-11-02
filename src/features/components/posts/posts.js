@@ -32,9 +32,9 @@ export const Posts = ({ posts }) => {
 
     return (
         <div>
-            <div>
+            <div className='searchBar'>
                 <div className="img-container">
-                    <img src='./reddit_new.png' id='icon' />
+                    <img src='./reddit1.png' id='icon' />
                 </div>
                 <label className="form-label" htmlFor="form1">Search in Reddit: </label>
                 <input type="search" id="form1" className="form-control" onChange={handleSearch} />
@@ -52,7 +52,7 @@ export const Posts = ({ posts }) => {
                                 <h6 onClick={() => setShowComment(!showComment)}>Comments</h6>
                             </div>
                             {showComment && <div className="box-comment">
-                                <Comments />
+                                <Comments post={term} />
                             </div>}
                         </div>
                     )
