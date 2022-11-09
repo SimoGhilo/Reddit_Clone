@@ -57,19 +57,9 @@ export const Posts = ({ posts }) => {
                                 <img className='thumbnails' src={term.thumbnail}></img>
                                 <h6 onClick={() => handleComments(term)}>Comments</h6>
                             </div>
-                            {showComment && <div className="box-comment">
-                                {comments?.slice(0, 3).map((comment) => {
-                                    return (
-                                        <div className="comments">
-                                            <div className="body">
-                                                <h5><small>{comment.body}</small></h5>
-                                            </div>
-                                            <p>{comment.author}</p>
-                                            <p>{Math.round((seconds - term.created_utc) / 6000)} Hours ago</p>
-                                        </div>
-                                    )
-                                })}
-                            </div>}
+                            <div className='comment-box'>
+                                <Comments post={term} showComment={showComment} setShowComment={setShowComment} />
+                            </div>
                         </div>
                     )
                 })}
@@ -84,21 +74,9 @@ export const Posts = ({ posts }) => {
                                 {/* <img id='comments' src="./chat.png" alt="comments" /> */}
                             </div>
                             <h6 onClick={() => handleComments(post)}>Comments</h6>
-                            {
-                                showComment && <div className="box-comment">
-                                    {comments?.slice(0, 3).map((comment) => {
-                                        return (
-                                            <div className="comments">
-                                                <div className="body">
-                                                    <h5><small>{comment.body}</small></h5>
-                                                </div>
-                                                <p>{comment.author}</p>
-                                                <p>{Math.round((seconds - post.created_utc) / 6000)} Hours ago</p>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            }
+                            <div className='comment-box'>
+                                <Comments post={post} showComment={showComment} setShowComment={setShowComment} />
+                            </div>
                         </div>
                     )
                 })}

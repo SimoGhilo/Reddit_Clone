@@ -14,16 +14,20 @@ export const Comments = (props) => {
     console.log(post.id)  //Stuck here
     console.log(comments); //Stuck here
 
-
+    let showComment = props.showComment;
+    let setShowComment = props.setShowComment;
     //Calculate the date now in seconds 
 
     var seconds = new Date().getTime() / 1000;
 
-    useEffect(() => { dispatch(fetchComments(post.permalink)) }, [dispatch, post.permalink])
-    // console.log(comments);
+
+    const togglePostComment = () => {
+        dispatch(fetchComments(post.permalink))
+    }
     return (
         <>
-            {comments?.slice(0, 3).map((comment) => {
+            <h6 onClick={() => togglePostComment()}>Comments</h6>
+            {showComment && comments?.slice(0, 3).map((comment) => {
                 return (
                     <div className="comments">
                         <div className="body">

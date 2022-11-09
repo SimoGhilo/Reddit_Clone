@@ -32,6 +32,16 @@ export const fetchComments = createAsyncThunk('posts/getComments',
 const postsSlice = createSlice({
     name: "posts",
     initialState: initialState,
+    reducers: {
+        togglePostComment(state, action) {
+            let post = state.posts.find(a => a.id === action.payload);
+            if (post.showComment) {
+                post.showComment = false;
+            } else {
+                post.showComment = true;
+            }
+        }
+    },
     extraReducers: {
         [fetchPosts.pending]: (state) => {
             state.isLoading = true;
