@@ -33,7 +33,7 @@ const postsSlice = createSlice({
     name: "posts",
     initialState: initialState,
     reducers: {
-        togglePostComment(state, action) {
+        togglePostComment: (state, action) => {
             let post = state.posts.find(a => a.id === action.payload);
             if (post.showComment) {
                 post.showComment = false;
@@ -74,6 +74,10 @@ const postsSlice = createSlice({
 })
 
 export default postsSlice.reducer;
+
+export const {
+    togglePostComment
+} = postsSlice.actions;
 
 export const selectPosts = (state) => state.posts.posts;
 export const selectComments = (state) => state.comments.comments;

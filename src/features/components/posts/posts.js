@@ -13,7 +13,7 @@ export const Posts = ({ posts }) => {
     const dispatch = useDispatch();
     const [search, setSearch] = useState('');
     const searchTerm = useSelector(selectSearchTerm);
-    const [showComment, setShowComment] = useState(false);
+    const [showComment, setShowComment] = useState(true);
     var seconds = new Date().getTime() / 1000;
     console.log(posts)
 
@@ -55,7 +55,6 @@ export const Posts = ({ posts }) => {
                             <div className="container">
                                 <h4>{term.title}</h4>
                                 <img className='thumbnails' src={term.thumbnail}></img>
-                                <h6 onClick={() => handleComments(term)}>Comments</h6>
                             </div>
                             <div className='comment-box'>
                                 <Comments post={term} showComment={showComment} setShowComment={setShowComment} />
@@ -73,7 +72,6 @@ export const Posts = ({ posts }) => {
                                 <img className='thumbnails' src={post.thumbnail}></img>
                                 {/* <img id='comments' src="./chat.png" alt="comments" /> */}
                             </div>
-                            <h6 onClick={() => handleComments(post)}>Comments</h6>
                             <div className='comment-box'>
                                 <Comments post={post} showComment={showComment} setShowComment={setShowComment} />
                             </div>

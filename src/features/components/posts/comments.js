@@ -1,7 +1,7 @@
 import React from "react"
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchComments, selectComments } from "./postSlice";
+import { useEffect, useState } from 'react';
+import { fetchComments, selectComments, togglePostComment } from "./postSlice";
 import './comments.css';
 
 
@@ -10,23 +10,40 @@ export const Comments = (props) => {
 
     const dispatch = useDispatch();
     const comments = useSelector(selectComments);
-    let post = props.post;
-    console.log(post.id)  //Stuck here
-    console.log(comments); //Stuck here
+    let { post } = props;
+    let showComment = post.showComment;
+    //let { post } = props;
+    //let post = props.post;
+    //console.log(post.id)  //Stuck here
+    //console.log(comments); //Stuck here
 
-    let showComment = props.showComment;
-    let setShowComment = props.setShowComment;
+    //const [showComment, setShowComment] = useState(true);
     //Calculate the date now in seconds 
+
 
     var seconds = new Date().getTime() / 1000;
 
+    useEffect(() => {
+        if (showComment) {
+            console.log('Found comment', post.id);
+            dispatch(fetchComments(post.permalink));
+        }
+    }, []);
 
-    const togglePostComment = () => {
-        dispatch(fetchComments(post.permalink))
+
+    const handlePostComment = (id) => {
+        //console.log('Logging post comment id', id);
+
+        //dispatch(fetchComments(post.permalink));
+        //setShowComment(!showComment);
+        dispatch(togglePostComment(id));
+
     }
+
+    console.log(comments)
     return (
         <>
-            <h6 onClick={() => togglePostComment()}>Comments</h6>
+            <h6 onClick={() => handlePostComment(post.id)}>Comments</h6>
             {showComment && comments?.slice(0, 3).map((comment) => {
                 return (
                     <div className="comments">
