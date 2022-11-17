@@ -8,6 +8,7 @@ const initialState = {
     comments: [],
     error: false,
     isLoading: false,
+    currentPostId: null
 }
 
 export const fetchPosts = createAsyncThunk('posts/getPosts',
@@ -34,12 +35,13 @@ const postsSlice = createSlice({
     initialState: initialState,
     reducers: {
         togglePostComment: (state, action) => {
-            let post = state.posts.find(a => a.id === action.payload);
-            if (post.showComment) {
-                post.showComment = false;
+            if (state.currentPostId == action.payload) {
+                state.currentPostId = null;
             } else {
-                post.showComment = true;
+                state.currentPostId = action.payload;
             }
+
+
         }
     },
     extraReducers: {
@@ -80,4 +82,5 @@ export const {
 } = postsSlice.actions;
 
 export const selectPosts = (state) => state.posts.posts;
+export const selectCurrentPost = (state) => state.posts.currentPostId;
 export const selectComments = (state) => state.comments.comments;
